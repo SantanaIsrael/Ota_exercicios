@@ -1,7 +1,7 @@
-public class quadrilatero {
+public abstract class Quadrilatero {
     protected float x, y;
 
-    public quadrilatero(float x, float y){
+    public Quadrilatero(float x, float y){
         this.x = x;
         this.y = y;
     }
@@ -22,8 +22,7 @@ public class quadrilatero {
         return y;
     }
 
-    public float CalcularArea(){
-        System.out.println("CalcularArea quadrilatero.");
-        return 0;
-    }
+    public abstract float CalcularArea();
+
+    public abstract float CalcularPerimetro();
 }

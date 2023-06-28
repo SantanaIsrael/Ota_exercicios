@@ -1,15 +1,20 @@
 public class main {
     public static void main(String[] args) {
-        quadrilatero[] vetor = new quadrilatero[5];
+        Quadrilatero[] vetor = new Quadrilatero[5];
 
-         vetor[0] = new quadrado(5.2f); 
-         vetor[1] = new quadrilatero(2f, 5f);
-         vetor[2] = new retangulo(22f,25f);
-         vetor[3] = new quadrilatero(33f, 5.3f);
-         vetor[4] = new retangulo(2, 6);
+         vetor[0] = new Quadrado(5.2f); 
+         //vetor[1] = new ;
+         vetor[1] = new Retangulo(22f,25f);
+         //vetor[3] = new ;
+         vetor[2] = new Retangulo(2, 6);
 
-        for (int i = 0; i < vetor.length; i++) {
+         Retangulo newRetangulo = new Retangulo(2.5f, 2.3f);
+         newRetangulo.aumentarTamanho(3f);
+
+         for (int i = 0; i < vetor.length; i++) {
             System.out.println(vetor[i].CalcularArea());
         }
+
+        System.out.printf("Nova area: " + newRetangulo.CalcularArea());
     }
 }

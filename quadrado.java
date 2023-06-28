@@ -1,12 +1,12 @@
-public class quadrado extends quadrilatero {
+public class Quadrado extends Quadrilatero implements ObjetoIOT {
     protected float altura;
 
-    public quadrado(float altura, float x, float y){
+    public Quadrado(float altura, float x, float y){
         super(x, y);
         this.altura = altura;
     }
 
-    public quadrado(float altura){
+    public Quadrado(float altura){
         this(altura, 0, 0);
     }
 
@@ -23,4 +23,22 @@ public class quadrado extends quadrilatero {
         System.out.println("CalcularArea quadrado.");
         return altura * altura;
     }
+
+    @Override
+    public float CalcularPerimetro() {
+        System.out.println("Calculando perimetro do quadrado");
+        return altura*4;
+    }
+
+    @Override
+    public void aumentarTamanho(float porcento) {
+        altura =+ (altura*porcento)/100;
+    }
+
+    @Override
+    public void diminuirTamanho(float porcento) {
+        altura =- (altura*porcento)/100;
+    }
+
+    
 }
