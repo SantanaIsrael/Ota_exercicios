@@ -1,20 +1,25 @@
-import java.nio.file.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class arquivo {
+    public static void main(String[] args) throws IOException 
+    {
+        String sourceFolder = "C://Users//israe//OneDrive//Documentos//Ciencia da Computação//2023.1//Linguagem de Programacao III//Ota_exercicios";
 
-    public static void main(String[] args) {
-        Path arquivo = Paths.get("C:/Users/israe/OneDrive/Documentos/Ciencia da Computa/2023.1/Linguagem de Programacao III/Ota_exercicios");
-        Path direct = Paths.get("C:/Users/israe/OneDrive/Documentos/Ciencia da Computa/2023.1/Linguagem de Programacao III/Ota_exercicios/Ota_exercicios");
+        File file = new File(sourceFolder + "//arquivo.csv");
+       // boolean chack = new File("//output").mkdir();
+        //System.out.println("Folder created " + chack);
 
-        if (Files.isDirectory(direct)) {
-            System.out.println("e sim dir");
-        } else {
-            System.out.println("Nao e direc");
+        try (BufferedWriter writer = new BufferedWriter (new FileWriter(file))) {
+            writer.write("sourceFolder" + ", " + "teste");
+            writer.newLine();
+            writer.write("sourceFolder" + ", " + "teste2");
+            System.out.println(sourceFolder + " created");
+        } catch (Exception e) {
+            System.out.println("Error for created file. \n" + e.getMessage());
         }
 
-        if (Files.exists(arquivo)) {
-            System.out.println("e arqui");
-        } else {
-            System.out.println("Nao achei");
-        }
     }
 }
